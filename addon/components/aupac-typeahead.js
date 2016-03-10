@@ -26,7 +26,8 @@ export default Component.extend({
   action: Ember.K, //@public
   selection : null, //@public
   source : Ember.K, //@public
-
+  focusout: Ember.K, //@public
+  
   //typeahead.js Customizations
   highlight: true, //@public
   hint: true, //@public
@@ -187,6 +188,7 @@ export default Component.extend({
       } else {
           this.setValue(null);
       }
+      this.sendAction('focusout');
     }));
 
   },
